@@ -1,0 +1,34 @@
+{% extends "base.html.j2" %}
+{% block title %}
+Personal Information
+{% endblock %}
+{% block content %}
+<h1>Personal Information</h1>
+<p>
+    Name: {{logged_user.first_name}} {{logged_user.last_name}} <br>
+    username: {{logged_user.username}}<br>
+    email: {{logged_user.email}}
+</p>
+<h4>Feedbacks</h4>
+<div>
+    {% for feedback in feedbacks %}
+    <ul>
+        <li>{{feedback.title}} - {{feedback.content}}</li>
+    </ul>
+    {% endfor %}
+</div>
+
+<form class="form-control" action="/users/{{logged_user.username}}/feedback/add">
+    <button class="btn btn-info">Add feedback</button>
+</form>
+<form class="form-control" action="/logout">
+    <button class="btn btn-primary">Logout</button>
+</form>
+
+<form class="form-control" action="/users/{{logged_user.username}}/delete" method="post">
+    <button class="btn btn-danger">Delete user</button>
+</form>
+
+{% endblock %}
+
+{# Reched part 7, need to include some Information about the user, and then play around with the new feedback model #}

@@ -1,0 +1,15 @@
+{% extends "base.html.j2" %}
+
+{% block title %}
+Feedback
+{% endblock %}
+
+{% block content %}
+<h1 class="display-1">Please add a feedback</h1>
+
+<form method="post" class="form-control">
+    {% include "form.html.j2" %}
+    <button class="btn btn-primary">Add feedback</button>
+
+</form>
+{% endblock %}

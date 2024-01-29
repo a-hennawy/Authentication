@@ -1,0 +1,12 @@
+{% extends "base.html.j2" %}
+
+{% block title %}
+Login
+{% endblock %}
+{% block content %}
+<form class="form-control" method="post">
+    {% include "form.html.j2" %}
+    <button>Login</button>
+</form>
+<span>Don't have an account? <a href="/register">Sign-up!</a></span>
+{% endblock %}
